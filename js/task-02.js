@@ -9,12 +9,12 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector("#ingredients");
 
-ingredients.reverse().forEach(ingredient => {
+const ingredientsList = ingredients.map(ingredient => {
  const list = document.createElement("li");
   list.textContent = ingredient;
   list.classList.add("item");
-  console.log(ingredientsRef.prepend(list));
+  return list;
 });
 
-
+console.log(ingredientsRef.prepend(...ingredientsList));
 
